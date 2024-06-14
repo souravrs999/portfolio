@@ -65,7 +65,14 @@ const TechStack: TeachStackComponent = forwardRef<
       {...rest}
     >
       {stackItems.map((i) => (
-        <Link key={i.id} href={i.url} className="p-4">
+        <Link
+          key={i.id}
+          href={i.url}
+          aria-label={i.id}
+          target="_blank"
+          referrerPolicy="no-referrer"
+          className="p-4"
+        >
           <SimpleIcon size={size} iconName={i.iconName} />
         </Link>
       ))}

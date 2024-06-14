@@ -22,7 +22,7 @@ import {
 } from "./sidebar.types";
 import { cn } from "@/util/style";
 import { SidebarContext } from "./sidebar.context";
-import useIsMobile from "@/hooks/useMobile";
+import useIsMobile from "@/hooks/use-mobile";
 
 const SidebarTrigger: SidebarTriggerComponent = forwardRef<
   HTMLDivElement,

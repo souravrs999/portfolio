@@ -33,7 +33,9 @@ export default function RootLayout({
       >
         <div className="w-full h-screen flex">
           <Navigation />
-          <div className="w-full px-4">{children}</div>
+          <div className="w-full px-4 h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300">
+            {children}
+          </div>
         </div>
       </body>
     </html>

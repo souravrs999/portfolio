@@ -25,19 +25,28 @@ const Socials: SocialsComponent = forwardRef<HTMLDivElement, SocialsProps>(
         className={cn("w-full flex justify-between", className)}
         {...rest}
       >
-        <Link href="/">
+        <Link aria-label="My website" href="/">
           <Icons.globe />
         </Link>
-        <Link href="https://github.com/souravrs999">
+        <Link aria-label="My Github" href="https://github.com/souravrs999">
           <SimpleIcon iconName="github" />
         </Link>
-        <Link href="https://www.instagram.com/souravraveen">
+        <Link
+          aria-label="My Instagram"
+          href="https://www.instagram.com/souravraveen"
+        >
           <SimpleIcon iconName="instagram" />
         </Link>
-        <Link href="www.linkedin.com/in/sourav-r-s-6868bb191">
+        <Link
+          aria-label="My LinkedIn"
+          href="https://www.linkedin.com/in/sourav-r-s-6868bb191"
+        >
           <SimpleIcon iconName="linkedin" />
         </Link>
-        <Link href="https://stackoverflow.com/users/14510466/sourav-r-s">
+        <Link
+          aria-label="My Stackoverflow"
+          href="https://stackoverflow.com/users/14510466/sourav-r-s"
+        >
           <SimpleIcon iconName="stackoverflow" />
         </Link>
       </div>

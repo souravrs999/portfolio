@@ -6,10 +6,10 @@ import TechStack from "./tech-stack";
 const HeroSection = () => {
   return (
     <section className="m-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+      <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 mb-12">
         <div className="flex flex-col gap-6">
           <Avatar />
-          <h6 className="font-black text-6xl sm:text-9xl text-gray-300 uppercase">
+          <h6 className="font-black text-6xl sm:text-9xl text-gray-300 contrast-more:text-gray-500 uppercase">
             Hi, my name is <strong className="text-[#111]">sourav</strong>
           </h6>
         </div>
@@ -32,7 +32,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="flex flex-col gap-6">
-        <h5 className="text-gray-300 text-4xl font-black uppercase">
+        <h5 className="text-gray-700 text-4xl font-black uppercase">
           My Stack
         </h5>
         <TechStack />

@@ -1,4 +1,5 @@
 import HeroSection from "@/components/hero";
+import Testimonials from "@/components/testimonials";
 import { getDictionary } from "@/util/i18n";
 
 interface PageProps {
@@ -9,9 +10,11 @@ interface PageProps {
 
 export default async function Home({ params: { lang } }: PageProps) {
   const dict = await getDictionary(lang);
+
   return (
-    <div className="h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300">
+    <div className="flex flex-col gap-12 my-12">
       <HeroSection />
+      <Testimonials />
     </div>
   );
 }
