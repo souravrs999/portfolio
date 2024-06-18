@@ -11,6 +11,8 @@ import { AUTOPLAY_INTERVAL } from "@/util/constants";
 import { useCallback, useEffect, useState } from "react";
 import { testimonialsData } from "../../data/testimonials";
 import { cn } from "@/util/style";
+import SectionHeading from "./section-heading";
+import Section from "./section";
 
 const Testimonials = () => {
   const SLIDE_COUNT: number = testimonialsData?.length;
@@ -53,12 +55,14 @@ const Testimonials = () => {
   }, [api, onInit, onSelect]);
 
   return (
-    <>
-      <div className="flex flex-col gap-6 mx-12">
-        <h1 className="text-4xl font-black text-gray-700 uppercase">
-          Testimonials
-        </h1>
-      </div>
+    <Section watermark id="testimonials">
+      <SectionHeading>Testimonials</SectionHeading>
+      <p className="text-base text-gray-500 mb-12">
+        Don&apos;t just take my word for it—here’s what others have to say about
+        my work. These testimonials from clients and colleagues highlight my
+        dedication, skills, and the positive impact I&apos;ve had on their
+        projects and teams.
+      </p>
       <Carousel setApi={setApi} className="w-full">
         <CarouselContent>
           {SLIDES.map((s) => (
@@ -76,9 +80,9 @@ const Testimonials = () => {
           {Array.from({ length: SLIDE_COUNT }).map((_, idx) => (
             <span
               className={cn(
-                "w-2 h-2 rounded-full bg-gray-300 transform transition-all duration-300",
+                "w-3 h-3 bg-gray-300 transform transition-all duration-300",
                 {
-                  "bg-[#111] w-4": selectedIdx === idx,
+                  "bg-[#111] w-6": selectedIdx === idx,
                 }
               )}
               key={idx}
@@ -86,7 +90,7 @@ const Testimonials = () => {
           ))}
         </div>
       </Carousel>
-    </>
+    </Section>
   );
 };
 export default Testimonials;

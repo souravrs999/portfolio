@@ -42,7 +42,7 @@ const SidebarTrigger: SidebarTriggerComponent = forwardRef<
   return (
     <div
       ref={ref}
-      className="cursor-pointer absolute h-6 w-6 top-10 right-10 grid place-items-center"
+      className="bg-white z-50 cursor-pointer absolute h-6 w-6 top-10 right-10 grid place-items-center"
       onClick={handleTriggerClick}
       {...rest}
     >
@@ -97,7 +97,7 @@ const SidebarNavigationItem: SidebarNavigationItemComponent = forwardRef<
     <li
       ref={ref}
       className={cn(
-        "nav-item relative py-4 text-lg not-italic font-normal leading-[2 after:-translate-x-20%] border-b border-gray-200 cursor-pointer",
+        "nav-item tracking-widest uppercase relative py-4 text-lg not-italic font-normal leading-[2 after:-translate-x-20%] border-b border-gray-200 cursor-pointer",
         { "border-[#111]": active }
       )}
       {...rest}

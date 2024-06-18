@@ -29,7 +29,7 @@ const TestimonialCard: TestimonialCardComponent = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "w-full gap-12 flex flex-wrap items-center border py-8 px-12",
+        "w-full bg-white gap-12 flex flex-wrap items-center border py-8 px-12",
         className
       )}
       {...rest}
@@ -38,7 +38,7 @@ const TestimonialCard: TestimonialCardComponent = forwardRef<
         <Image fill src={image} alt="testimonial image" />
       </div>
       <div className="flex md:flex-1 flex-col gap-4 items-end">
-        <p className="relative text-base text-gray-700 font-medium p-2">
+        <p className="relative text-base text-gray-700 font-medium p-2 text-justify">
           <Icons.quote className="absolute rotate-180 top-0 -left-6 fill-gray-300 stroke-gray-300" />
           {content}
           <Icons.quote className="absolute bottom-0 right-0 stroke-gray-300 fill-gray-300" />

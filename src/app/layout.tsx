@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import Navigation from "@/components/navigation";
 import { cn } from "@/util/style";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
@@ -18,23 +19,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
-  params: { lang: string };
 }>) {
   return (
-    <html lang={params.lang}>
+    <html lang="en">
       <body
         className={cn(
           roboto.className,
-          "scroll-smooth antialiased max-w-[1920px]"
+          "scroll-smooth antialiased max-w-[1920px] mx-auto"
         )}
       >
         <div className="w-full h-screen flex">
           <Navigation />
           <div className="w-full px-4 h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300">
             {children}
+            <Analytics />
           </div>
         </div>
       </body>
