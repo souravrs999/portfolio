@@ -1,10 +1,13 @@
 import {
   ArrowLeft,
   ArrowRight,
+  Check,
+  Cog,
   Globe,
   LucideIcon,
   Menu,
   Quote,
+  X,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -14,4 +17,7 @@ export const Icons = {
   quote: Quote,
   arrowLeft: ArrowLeft,
   arrowRight: ArrowRight,
+  cog: Cog,
+  x: X,
+  check: Check,
 };

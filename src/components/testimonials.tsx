@@ -41,6 +41,15 @@ const Testimonials = () => {
     setSelectedIdx(api?.selectedScrollSnap());
   }, []);
 
+  const onIndicatorClick = useCallback(
+    (e: React.MouseEvent<HTMLSpanElement>) => {
+      const { id } = e.currentTarget;
+      if (!id) return;
+      api?.scrollTo(Number(id));
+    },
+    [api]
+  );
+
   useEffect(() => {
     play();
     return () => stop();
@@ -57,8 +66,8 @@ const Testimonials = () => {
   return (
     <Section watermark id="testimonials">
       <SectionHeading>Testimonials</SectionHeading>
-      <p className="text-base text-gray-500 mb-12">
-        Don&apos;t just take my word for it—here’s what others have to say about
+      <p className="text-base text-gray-500 dark:text-gray-400 mb-12 text-justify">
+        Don&apos;t just take my word for it here’s what others have to say about
         my work. These testimonials from clients and colleagues highlight my
         dedication, skills, and the positive impact I&apos;ve had on their
         projects and teams.
@@ -80,12 +89,14 @@ const Testimonials = () => {
           {Array.from({ length: SLIDE_COUNT }).map((_, idx) => (
             <span
               className={cn(
-                "w-3 h-3 bg-gray-300 transform transition-all duration-300",
+                "w-3 h-3 bg-gray-300 dark:bg-[#1e1e1e] transform transition-all duration-300 cursor-pointer",
                 {
-                  "bg-[#111] w-6": selectedIdx === idx,
+                  "bg-[#111] dark:bg-gray-200 w-6": selectedIdx === idx,
                 }
               )}
+              onClick={onIndicatorClick}
               key={idx}
+              id={idx.toString()}
             />
           ))}
         </div>

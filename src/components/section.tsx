@@ -28,7 +28,7 @@ const Section: SectionComponent = forwardRef<HTMLElement, SectionProps>(
       >
         {children}
         {watermark && (
-          <span className="absolute text-[16rem] font-black uppercase text-gray-100 -bottom-24 -right-1/4 -z-[10] opacity-50">
+          <span className="absolute text-[16rem] font-black uppercase text-gray-100 dark:text-[#1e1e1e] -bottom-24 -right-1/4 -z-[10] opacity-50">
             {id}
           </span>
         )}

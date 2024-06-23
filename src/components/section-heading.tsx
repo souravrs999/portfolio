@@ -22,7 +22,7 @@ const SectionHeading: SectionHeadingComponent = forwardRef<
     <h1
       ref={ref}
       className={cn(
-        "relative text-6xl font-black text-gray-100 uppercase w-fit tracking-widest my-12",
+        "relative text-6xl font-black text-gray-100 dark:text-[#1e1e1e] uppercase w-fit tracking-widest my-12",
         className
       )}
       {...rest}
@@ -30,7 +30,7 @@ const SectionHeading: SectionHeadingComponent = forwardRef<
       {children}
       <span
         aria-label={children as string}
-        className="absolute text-[#111] text-4xl font-black uppercase bottom-0 left-0 tracking-normal"
+        className="absolute text-[#111] dark:text-gray-100 text-4xl font-black uppercase bottom-0 left-0 tracking-normal"
       >
         {children}
       </span>

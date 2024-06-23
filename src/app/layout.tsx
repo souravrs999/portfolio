@@ -3,7 +3,8 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/navigation";
 import { cn } from "@/util/style";
-import { Analytics } from "@vercel/analytics/react";
+import ThemeProvider from "@/providers/theme";
+import Preferences from "@/components/preferences";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
@@ -23,20 +24,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
           roboto.className,
-          "scroll-smooth antialiased max-w-[1920px] mx-auto"
+          "scroll-smooth antialiased max-w-[1920px] mx-auto dark:bg-[#111]"
         )}
       >
-        <div className="w-full h-screen flex">
-          <Navigation />
-          <div className="w-full px-4 h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300">
-            {children}
-            <Analytics />
+        <ThemeProvider>
+          <div className="w-full h-screen flex">
+            <Navigation />
+            <div className="w-full px-4 h-screen overflow-y-auto scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300">
+              {children}
+            </div>
           </div>
-        </div>
+          <Preferences />
+        </ThemeProvider>
       </body>
     </html>
   );

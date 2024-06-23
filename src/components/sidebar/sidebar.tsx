@@ -30,7 +30,6 @@ const SidebarTrigger: SidebarTriggerComponent = forwardRef<
 >((props: SidebarTriggerProps, ref?: Ref<HTMLDivElement>) => {
   const { children, asChild, className, ...rest } = props;
   const context = useContext(SidebarContext);
-  const Comp = asChild ? Fragment : "div";
 
   function handleTriggerClick(e: React.MouseEvent<HTMLDivElement>) {
     e.preventDefault();
@@ -42,15 +41,15 @@ const SidebarTrigger: SidebarTriggerComponent = forwardRef<
   return (
     <div
       ref={ref}
-      className="bg-white z-50 cursor-pointer absolute h-6 w-6 top-10 right-10 grid place-items-center"
+      className="z-50 cursor-pointer absolute h-6 w-6 top-10 right-10 grid place-items-center"
       onClick={handleTriggerClick}
       {...rest}
     >
       <div
         className={cn(
-          "w-full h-[2px] bg-[#111] rounded-full transition-all duration-300",
-          "before:content-[''] before:absolute before:w-full before:h-[2px] before:bg-[#111] before:rounded-full before:-translate-y-2 before:transition-all before:duration-300",
-          "after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-[#111] after:rounded-full after:translate-y-2 after:transition-all after:duration-300",
+          "w-full h-[2px] bg-[#111] dark:bg-gray-200 rounded-full transition-all duration-300",
+          "before:content-[''] before:absolute before:w-full before:h-[2px] before:bg-[#111] dark:before:bg-gray-200 before:rounded-full before:-translate-y-2 before:transition-all before:duration-300",
+          "after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-[#111] dark:after:bg-gray-200 after:rounded-full after:translate-y-2 after:transition-all after:duration-300",
           { hidden: !context?.mobile },
           { "h-0 bg-white": context?.active },
           { "before:translate-y-0 before:rotate-45": context?.active },
@@ -97,8 +96,12 @@ const SidebarNavigationItem: SidebarNavigationItemComponent = forwardRef<
     <li
       ref={ref}
       className={cn(
-        "nav-item tracking-widest uppercase relative py-4 text-lg not-italic font-normal leading-[2 after:-translate-x-20%] border-b border-gray-200 cursor-pointer",
-        { "border-[#111]": active }
+        "nav-item tracking-widest uppercase relative [&_a]:block [&_a]:py-4 text-lg not-italic font-normal leading-[2 after:-translate-x-20%] border-b border-gray-200 dark:border-[#1e1e1e] cursor-pointer",
+        {
+          "border-[#111] dark:border-gray-200": active,
+          "before:content-[''] before:absolute before:bottom-[-1px] before:left-0 before:h-[1px] before:bg-[#111] dark:before:bg-[#fff] before:w-0 hover:before:w-full before:transition-all before:duration-700":
+            true,
+        }
       )}
       {...rest}
     >
@@ -161,7 +164,7 @@ const SidebarContent: SidebarContentComponent = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "fixed px-12 bg-white h-full w-[280px] transform transition-all duration-300 z-10",
+        "fixed px-12 bg-white dark:bg-[#111] h-full w-[280px] transform transition-all duration-300 z-10",
         { "-translate-x-full": context?.mobile && !context.active },
         { "relative translate-x-0": !context?.mobile },
         className

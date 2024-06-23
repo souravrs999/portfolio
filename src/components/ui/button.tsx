@@ -20,7 +20,7 @@ const Button: ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "bg-[#111] hover:bg-[#424649] text-white px-3 py-4",
+          "bg-[#111] dark:bg-gray-200 hover:bg-[#424649] dark:hover:bg-gray-300 text-white dark:text-[#111] px-3 py-4",
           className
         )}
         {...rest}

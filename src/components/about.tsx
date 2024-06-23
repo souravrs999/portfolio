@@ -7,13 +7,13 @@ const About = () => {
     <Section id="about" watermark>
       <SectionHeading>about me</SectionHeading>
       <div className="my-6 flex flex-col lg:flex-row gap-24">
-        <div className="relative ml-6 w-[240px] md:w-[320px] h-[320px] md:h-[427px] shrink-0 outline outline-gray-100 outline-offset-8">
-          <div className="absolute w-[240px] md:w-[320px] h-[320px] md:h-[427px] bg-gray-100 -bottom-6 -right-6" />
+        <div className="relative ml-6 w-[240px] md:w-[320px] h-[320px] md:h-[427px] shrink-0 outline outline-gray-100 dark:outline-[#1e1e1e] outline-offset-8">
+          <div className="absolute w-[240px] md:w-[320px] h-[320px] md:h-[427px] bg-gray-100 dark:bg-[#1e1e1e] -bottom-6 -right-6" />
           <div className="relative w-[240px] h-[320px] md:w-[320px] md:h-[427px]">
             <Image fill src="/images/about-me-cover.jpg" alt="about me image" />
           </div>
         </div>
-        <p className="max-w-4xl text-base text-gray-500 text-justify">
+        <p className="max-w-4xl text-base text-gray-500 dark:text-gray-400 text-justify">
           Hi there! I&apos;m a passionate Frontend Developer from
           Thiruvananthapuram, Kerala, India. I hold a Bachelor&apos;s degree in
           B.Voc Computer Science and have been honing my skills in the tech

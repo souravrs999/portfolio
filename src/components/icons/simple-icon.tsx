@@ -7,11 +7,7 @@ interface SimpleIconProps {
   color?: string;
 }
 
-const SimpleIcon: React.FC<SimpleIconProps> = ({
-  iconName,
-  size = 24,
-  color = "#000",
-}) => {
+const SimpleIcon: React.FC<SimpleIconProps> = ({ iconName, size = 24 }) => {
   const icon =
     icons[
       `si${
@@ -29,7 +25,7 @@ const SimpleIcon: React.FC<SimpleIconProps> = ({
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill={color}
+      fill="currentColor"
       dangerouslySetInnerHTML={{ __html: icon.svg }}
     />
   );
