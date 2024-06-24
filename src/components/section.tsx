@@ -23,12 +23,15 @@ const Section: SectionComponent = forwardRef<HTMLElement, SectionProps>(
       <section
         ref={ref}
         id={id}
-        className={cn("relative m-6 sm:m-12 overflow-hidden", className)}
+        className={cn(
+          "relative m-6 sm:m-12 overflow-hidden p-[2px]",
+          className
+        )}
         {...rest}
       >
         {children}
         {watermark && (
-          <span className="absolute text-[16rem] font-black uppercase text-gray-100 dark:text-[#1e1e1e] -bottom-24 -right-1/4 -z-[10] opacity-50">
+          <span className="absolute text-[16rem] font-black uppercase text-gray-100 dark:text-[#1e1e1e] -bottom-24 -right-1/4 -z-[10] opacity-50 whitespace-nowrap">
             {id}
           </span>
         )}

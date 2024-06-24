@@ -5,6 +5,7 @@ import Navigation from "@/components/navigation";
 import { cn } from "@/util/style";
 import ThemeProvider from "@/providers/theme";
 import Preferences from "@/components/preferences";
+import { Analytics } from "@vercel/analytics/react";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
@@ -39,6 +40,7 @@ export default function RootLayout({
             </div>
           </div>
           <Preferences />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

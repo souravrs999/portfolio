@@ -5,10 +5,11 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
 import { cn } from "@/util/style";
+import Button from "./ui/button";
 
 const Preferences = () => {
   const { theme, setTheme } = useTheme();
@@ -16,14 +17,17 @@ const Preferences = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div className="absolute bottom-12 right-0 w-12 h-12 shadow-2xl border dark:border-[#1e1e1e] p-2 bg-white dark:bg-[#1e1e1e] cursor-pointer">
+        <Button
+          aria-label="preferences"
+          className="absolute bottom-12 right-0 w-12 h-12 p-2 shadow-2xl border dark:border-[#1e1e1e] bg-white dark:bg-[#1e1e1e] hover:bg-white dark:hover:bg-[#1e1e1e]"
+        >
           <Icons.cog className="w-full h-full text-gray-400" />
-        </div>
+        </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-screen overflow-y-auto">
-        <DialogHeader className="text-2xl font-black uppercase">
+        <DialogTitle className="text-2xl font-black uppercase">
           Preferences
-        </DialogHeader>
+        </DialogTitle>
         <DialogDescription className="text-base text-gray-500 dark:text-gray-400">
           Select how you would like your interface to look. Select a theme or
           sync for automatic theme switching.

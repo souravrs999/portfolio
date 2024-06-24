@@ -2,6 +2,7 @@ import {
   ArrowLeft,
   ArrowRight,
   Check,
+  ChevronDown,
   Cog,
   Globe,
   LucideIcon,
@@ -20,4 +21,5 @@ export const Icons = {
   cog: Cog,
   x: X,
   check: Check,
+  chevronDown: ChevronDown,
 };

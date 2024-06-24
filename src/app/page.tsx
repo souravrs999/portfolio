@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import HeroSection from "@/components/hero";
 import Skills from "@/components/skills";
@@ -14,6 +15,7 @@ const Home = () => {
       <Experience />
       <Works />
       <Testimonials />
+      <Contact />
     </div>
   );
 };

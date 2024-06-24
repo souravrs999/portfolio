@@ -14,7 +14,7 @@ const Works = () => {
           <div className="flex bg-white dark:bg-[#111] gap-6 items-start py-6 md:p-12 md:absolute md:top-1/2 md:max-w-lg">
             <span className="text-7xl font-black">01</span>
             <div className="w-full">
-              <h4 className="font-black text-2xl uppercase">Tody</h4>
+              <p className="font-black text-2xl uppercase">Tody</p>
               <p className="text-gray-500 dark:text-gray-400 text-justify mt-4">
                 Developed a real-time chat application for Tody with
                 peer-to-peer and group messaging capabilities, featuring

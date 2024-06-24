@@ -37,8 +37,8 @@ const Navigation = () => {
               <Sidebar.Item active={activeSection === "testimonials"}>
                 <Link href="#testimonials">testimonials</Link>
               </Sidebar.Item>
-              <Sidebar.Item active={activeSection === "contact"}>
-                <Link href="#contact">contact</Link>
+              <Sidebar.Item active={activeSection === "contact me"}>
+                <Link href="#contact me">contact</Link>
               </Sidebar.Item>
             </Sidebar.List>
           </Sidebar.Section>

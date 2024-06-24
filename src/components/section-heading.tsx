@@ -8,7 +8,7 @@ import {
   forwardRef,
 } from "react";
 
-export interface SectionHeadingProps extends ComponentPropsWithRef<"h1"> {}
+export interface SectionHeadingProps extends ComponentPropsWithRef<"div"> {}
 export type SectionHeadingComponent = ForwardRefExoticComponent<
   PropsWithoutRef<SectionHeadingProps> & RefAttributes<HTMLHeadingElement>
 > & { displayName?: string };
@@ -19,22 +19,18 @@ const SectionHeading: SectionHeadingComponent = forwardRef<
 >((props: SectionHeadingProps, ref?: Ref<HTMLHeadingElement>) => {
   const { children, className, ...rest } = props;
   return (
-    <h1
-      ref={ref}
-      className={cn(
-        "relative text-6xl font-black text-gray-100 dark:text-[#1e1e1e] uppercase w-fit tracking-widest my-12",
-        className
-      )}
-      {...rest}
-    >
-      {children}
+    <div ref={ref} className={cn("relative my-12", className)} {...rest}>
       <span
-        aria-label={children as string}
-        className="absolute text-[#111] dark:text-gray-100 text-4xl font-black uppercase bottom-0 left-0 tracking-normal"
+        aria-hidden
+        aria-disabled
+        className="text-6xl font-black text-gray-100 dark:text-[#1e1e1e] uppercase w-fit tracking-widest"
       >
         {children}
       </span>
-    </h1>
+      <h1 className="absolute text-[#111] dark:text-gray-100 text-4xl font-black uppercase bottom-0 left-0 tracking-normal">
+        {children}
+      </h1>
+    </div>
   );
 });
 SectionHeading.displayName = "SectionHeading";

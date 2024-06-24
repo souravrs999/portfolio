@@ -12,7 +12,7 @@ const HeroSection = () => {
           <Avatar />
           <h6
             aria-label="Hi, my name is Sourav"
-            className="font-black text-6xl sm:text-9xl text-gray-300 dark:text-[#1e1e1e] contrast-more:text-gray-500 uppercase"
+            className="font-black text-6xl sm:text-9xl text-gray-400 dark:text-[#1e1e1e] contrast-more:text-gray-500 uppercase"
           >
             Hi, my name is{" "}
             <strong className="text-[#111] dark:text-gray-200">sourav</strong>
@@ -32,9 +32,12 @@ const HeroSection = () => {
             <Button className="px-4 sm:px-8 uppercase dark:bg-white dark:text-[#111] dark:hover:bg-gray-200">
               Talk with me
             </Button>
-            <Button className="bg-white dark:bg-[#111] text-[#111] dark:text-gray-200 border border-[#111] dark:border-gray-400 px-4 sm:px-8 uppercase hover:bg-gray-200 dark:hover:bg-[#1e1e1e]">
-              <Link href="#works">See my work</Link>
-            </Button>
+            <Link
+              href="#works"
+              className="grid place-items-center bg-white dark:bg-[#111] text-[#111] dark:text-gray-200 border border-[#111] dark:border-[#1e1e1e] px-4 sm:px-8 uppercase hover:bg-gray-200 dark:hover:bg-[#1e1e1e]"
+            >
+              See my work
+            </Link>
           </div>
         </div>
       </div>
