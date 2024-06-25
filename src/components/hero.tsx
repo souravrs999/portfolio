@@ -29,12 +29,15 @@ const HeroSection = () => {
           </p>
           <Socials className="max-w-xs" />
           <div className="w-full flex flex-col sm:flex-row gap-6">
-            <Button className="px-4 sm:px-8 uppercase dark:bg-white dark:text-[#111] dark:hover:bg-gray-200">
+            <Link
+              href="#contact me"
+              className="grid place-items-center text-gray-200 bg-[#111] px-4 py-4 sm:px-8 uppercase dark:bg-white dark:text-[#111] dark:hover:bg-gray-200 hover:bg-[#424649]"
+            >
               Talk with me
-            </Button>
+            </Link>
             <Link
               href="#works"
-              className="grid place-items-center bg-white dark:bg-[#111] text-[#111] dark:text-gray-200 border border-[#111] dark:border-[#1e1e1e] px-4 sm:px-8 uppercase hover:bg-gray-200 dark:hover:bg-[#1e1e1e]"
+              className="grid py-4 place-items-center bg-white dark:bg-[#111] text-[#111] dark:text-gray-200 border border-[#111] dark:border-[#1e1e1e] px-4 sm:px-8 uppercase hover:bg-gray-200 dark:hover:bg-[#1e1e1e]"
             >
               See my work
             </Link>

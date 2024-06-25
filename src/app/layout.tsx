@@ -7,6 +7,7 @@ import ThemeProvider from "@/providers/theme";
 import Preferences from "@/components/preferences";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/toast";
+import { siteConfig } from "@/util/site-config";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
@@ -15,9 +16,45 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Sourav's Portfolio",
-  description:
-    "Welcome to my portfolio website! I&apos;m Sourav, a passionate front-end developer specializing in React and Next.js. 🚀",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Sourav R S",
+    "Sourav",
+    "Portfolio",
+  ],
+  authors: [{ name: "sourav", url: "http://localhost:3000" }],
+  creator: "sourav",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/images/og-image.jpg`],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
 export default function RootLayout({
@@ -27,10 +64,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head />
       <body
         className={cn(
           roboto.className,
-          "scroll-smooth antialiased max-w-[1920px] mx-auto dark:bg-[#111]"
+          "scroll-smooth antialiased min-h-screen max-w-[1920px] mx-auto dark:bg-[#111]"
         )}
       >
         <ThemeProvider>
