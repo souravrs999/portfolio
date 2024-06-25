@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "Sourav",
     "Portfolio",
   ],
-  authors: [{ name: "sourav", url: "http://localhost:3000" }],
+  authors: [{ name: "sourav", url: siteConfig.url }],
   creator: "sourav",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
