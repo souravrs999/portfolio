@@ -42,12 +42,20 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: `${siteConfig.url}/android-chrome-512x512.png`,
+        width: 512,
+        height: 512,
+        alt: "sourav portfolio",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/images/og-image.jpg`],
+    images: [`${siteConfig.url}/android-chrome-512x512.png`],
   },
   icons: {
     icon: "/favicon.ico",
