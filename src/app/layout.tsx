@@ -6,6 +6,7 @@ import { cn } from "@/util/style";
 import ThemeProvider from "@/providers/theme";
 import Preferences from "@/components/preferences";
 import { Analytics } from "@vercel/analytics/react";
+import { Toaster } from "@/components/ui/toast";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
@@ -41,12 +42,9 @@ export default function RootLayout({
           </div>
           <Preferences />
           <Analytics />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
   );
-}
-
-export async function generateStaticParams() {
-  return [{ lang: "en-US" }, { lang: "nl-NL" }];
 }

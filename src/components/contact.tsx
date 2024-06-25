@@ -1,3 +1,4 @@
+import ContactForm from "./contact-form";
 import Section from "./section";
 import SectionHeading from "./section-heading";
 import {
@@ -6,9 +7,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import Button from "./ui/button";
-import { Input } from "./ui/input";
-import { Textarea } from "./ui/textarea";
 
 const Contact = () => {
   return (
@@ -21,39 +19,38 @@ const Contact = () => {
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
-                  What experience do you have in my industry?
+                  What technologies do you specialize in?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur.
+                  I specialize in HTML, CSS, JavaScript, Typescript, React,
+                  NextJS, Node.js, etc. I&apos;m always learning and staying
+                  up-to-date with the latest technologies to provide the best
+                  solutions for my clients.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="item-1">
+                <AccordionTrigger>What services do you offer?</AccordionTrigger>
+                <AccordionContent>
+                  I offer a range of services including web development, mobile
+                  app development, software consulting, etc. If you have a
+                  project in mind, feel free to reach out and we can discuss how
+                  I can help you achieve your goals.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
-                  What experience do you have in my industry?
+                  How long does a typical project take?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-            <Accordion type="single" collapsible>
-              <AccordionItem value="item-1">
-                <AccordionTrigger>
-                  What experience do you have in my industry?
-                </AccordionTrigger>
-                <AccordionContent>
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur.
+                  The timeline for a project can vary greatly depending on its
+                  scope and complexity. A small website might take a few weeks,
+                  while a more complex application could take several months.
+                  After our initial consultation, I can give you a more accurate
+                  estimate based on your specific project.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -63,12 +60,7 @@ const Contact = () => {
           <h2 className="font-bold text-2xl">
             Feel free to send me a message.
           </h2>
-          <div className="flex flex-col gap-2 mt-6">
-            <Input placeholder="Your Full Name" />
-            <Input placeholder="Your Email Address" />
-            <Textarea placeholder="Your Message" />
-            <Button>Submit</Button>
-          </div>
+          <ContactForm />
         </div>
       </div>
     </Section>
