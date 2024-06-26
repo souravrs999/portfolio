@@ -32,7 +32,7 @@ const Avatar: AvatarComponent = forwardRef<HTMLDivElement, AvatarProps>(
           />
         </div>
         <span className="absolute w-3 h-3 bg-green-500 bottom-2 right-2 rounded-full animate-ping" />
-        <span className="absolute w-3 h-3 bg-green-500 bottom-2 right-2 rounded-full ring-1 ring-white" />
+        <span className="absolute w-3 h-3 bg-green-500 bottom-2 right-2 rounded-full ring-1 ring-white dark:ring-[#111]" />
       </div>
     );
   }

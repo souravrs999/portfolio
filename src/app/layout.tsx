@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/navigation";
@@ -8,6 +8,7 @@ import Preferences from "@/components/preferences";
 import { Analytics } from "@vercel/analytics/react";
 import { Toaster } from "@/components/ui/toast";
 import { siteConfig } from "@/util/site-config";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700", "900"],
@@ -31,10 +32,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "sourav", url: siteConfig.url }],
   creator: "sourav",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -65,6 +62,12 @@ export const metadata: Metadata = {
   manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
+export const viewport: Viewport = {
+  themeColor: "#111",
+  initialScale: 1.0,
+  width: "device-width",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -88,6 +91,7 @@ export default function RootLayout({
           </div>
           <Preferences />
           <Analytics />
+          <SpeedInsights />
           <Toaster />
         </ThemeProvider>
       </body>
