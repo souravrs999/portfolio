@@ -66,7 +66,7 @@ const Testimonials = () => {
   return (
     <Section watermark id="testimonials">
       <SectionHeading>Testimonials</SectionHeading>
-      <p className="text-base text-gray-500 dark:text-gray-400 mb-12 text-justify">
+      <p className="text-base text-gray-500 dark:text-gray-400 mb-12 text-pretty">
         Don&apos;t just take my word for it here’s what others have to say about
         my work. These testimonials from clients and colleagues highlight my
         dedication, skills, and the positive impact I&apos;ve had on their

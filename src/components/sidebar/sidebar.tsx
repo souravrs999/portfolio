@@ -163,6 +163,7 @@ const SidebarContent: SidebarContentComponent = forwardRef<
   return (
     <div
       ref={ref}
+      aria-disabled={context?.mobile && !context.active}
       className={cn(
         "fixed px-12 bg-white dark:bg-[#111] h-full w-[280px] transform transition-all duration-300 z-10",
         { "-translate-x-full": context?.mobile && !context.active },

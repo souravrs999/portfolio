@@ -22,7 +22,7 @@ const HeroSection = () => {
           <h6 className="text-3xl sm:text-5xl text-gray-700 dark:text-gray-300 font-black">
             I build things for the web.
           </h6>
-          <p className="text-base text-gray-500 dark:text-gray-400 mb-4 text-justify">
+          <p className="text-base text-gray-500 dark:text-gray-400 mb-4 text-pretty">
             I&apos;m a software engineer based in Kerala, India. I specialize in
             building & desgining exceptional websites, applications, and
             everything in between

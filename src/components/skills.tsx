@@ -6,7 +6,7 @@ const Skills = () => {
   return (
     <Section id="skills" watermark>
       <SectionHeading>skills</SectionHeading>
-      <p className="text-base text-gray-500 dark:text-gray-400 mb-6 text-justify">
+      <p className="text-base text-gray-500 dark:text-gray-400 mb-6 text-pretty">
         With a solid foundation in frontend development, I specialize in
         building dynamic and responsive web applications using Next.js,
         React.js, and TypeScript. My expertise extends to backend technologies

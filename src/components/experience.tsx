@@ -18,7 +18,7 @@ const Experience = () => {
               Equipo Business Solutions Pvt. Ltd
             </div>
           </div>
-          <div className="mt-4 text-base text-gray-500 dark:text-gray-400 max-w-6xl text-justify">
+          <div className="mt-4 text-base text-gray-500 dark:text-gray-400 max-w-6xl text-pretty">
             Developed and maintained high-performance chat applications,
             ensuring real-time communication and a seamless user experience for
             Aspyre & Tody.
@@ -46,7 +46,7 @@ const Experience = () => {
               Coddle Technologies Pvt. Ltd
             </div>
           </div>
-          <div className="mt-4 text-base text-gray-500 dark:text-gray-400 max-w-6xl text-justify">
+          <div className="mt-4 text-base text-gray-500 dark:text-gray-400 max-w-6xl text-pretty">
             Designed and developed Xler8, a fully customizable dashboard library
             for a healthcare management system, akin to a React layout grid. The
             dashboard functions as an admin panel, providing critical metrics
@@ -74,7 +74,7 @@ const Experience = () => {
               Embright Infotech Pvt. Ltd
             </div>
           </div>
-          <div className="mt-4 text-base text-gray-500 dark:text-gray-400 max-w-6xl text-justify">
+          <div className="mt-4 text-base text-gray-500 dark:text-gray-400 max-w-6xl text-pretty">
             Designed and trained machine learning models using Python and
             PyTorch to develop assistive tools tailored for autistic children.
             <br />

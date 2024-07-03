@@ -38,7 +38,7 @@ const TestimonialCard: TestimonialCardComponent = forwardRef<
         <Image fill src={image} alt="testimonial image" />
       </div>
       <div className="flex md:flex-1 flex-col gap-4 items-end">
-        <p className="relative text-base text-gray-700 dark:text-gray-400 font-medium p-2 text-justify">
+        <p className="relative text-base text-gray-700 dark:text-gray-400 font-medium p-2 text-pretty">
           <Icons.quote className="absolute rotate-180 top-0 -left-6 fill-gray-300 stroke-gray-300" />
           {content}
           <Icons.quote className="absolute bottom-0 right-0 stroke-gray-300 fill-gray-300" />

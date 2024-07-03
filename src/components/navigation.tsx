@@ -20,25 +20,28 @@ const Navigation = () => {
             </Sidebar.Header>
             <Sidebar.List>
               <Sidebar.Item active={activeSection === "home"}>
-                <Link href="#home">Home</Link>
+                <Link href="/#home">Home</Link>
               </Sidebar.Item>
               <Sidebar.Item active={activeSection === "about"}>
-                <Link href="#about">about</Link>
+                <Link href="/#about">about</Link>
               </Sidebar.Item>
               <Sidebar.Item active={activeSection === "skills"}>
-                <Link href="#skills">skills</Link>
+                <Link href="/#skills">skills</Link>
               </Sidebar.Item>
               <Sidebar.Item active={activeSection === "experience"}>
-                <Link href="#experience">experience</Link>
+                <Link href="/#experience">experience</Link>
               </Sidebar.Item>
               <Sidebar.Item active={activeSection === "works"}>
-                <Link href="#works">works</Link>
+                <Link href="/#works">works</Link>
               </Sidebar.Item>
               <Sidebar.Item active={activeSection === "testimonials"}>
-                <Link href="#testimonials">testimonials</Link>
+                <Link href="/#testimonials">testimonials</Link>
+              </Sidebar.Item>
+              <Sidebar.Item active={activeSection === "blogs"}>
+                <Link href="/blogs">blogs</Link>
               </Sidebar.Item>
               <Sidebar.Item active={activeSection === "contact me"}>
-                <Link href="#contact me">contact</Link>
+                <Link href="/#contact me">contact</Link>
               </Sidebar.Item>
             </Sidebar.List>
           </Sidebar.Section>

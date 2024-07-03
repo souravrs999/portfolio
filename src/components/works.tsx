@@ -15,7 +15,7 @@ const Works = () => {
             <span className="text-7xl font-black">01</span>
             <div className="w-full">
               <p className="font-black text-2xl uppercase">Tody</p>
-              <p className="text-gray-500 dark:text-gray-400 text-justify mt-4">
+              <p className="text-gray-500 dark:text-gray-400 text-pretty mt-4">
                 Developed a real-time chat application for Tody with
                 peer-to-peer and group messaging capabilities, featuring
                 real-time message updates.
