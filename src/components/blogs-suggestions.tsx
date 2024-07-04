@@ -6,7 +6,11 @@ import { IPost } from "@/types/posts";
 export default async function BlogsSuggestions() {
   const popular = await fetch(
     `${process.env.CANONICAL_URL}/api/blogs/popular`
-  ).then((res) => res.json());
+  ).then((res) => {
+    if (res.ok) {
+      return res.json();
+    }
+  });
 
   return (
     <div className="flex flex-col gap-12 mt-6">
@@ -14,7 +18,7 @@ export default async function BlogsSuggestions() {
         popular post
       </h2>
       <div className="grid md:grid-cols-2 grid-cols-1 xl:grid-cols-1 gap-12">
-        {popular.map((post: IPost) => (
+        {popular?.map((post: IPost) => (
           <div key={post.slug} className="flex flex-col gap-4">
             <h3 className="font-bold text-xl text-[#111] dark:text-gray-100">
               {post.title}
