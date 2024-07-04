@@ -1,3 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+pre {
+  @apply scrollbar-thin scrollbar-thumb-rounded-full scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 p-4;
+}
+.prose h2 {
+  @apply py-6 text-3xl font-black text-[#111] dark:text-white;
+}
+.prose p {
+  @apply py-2 text-base text-gray-500 dark:text-gray-400;
+}
+
+.rehype-code-title {
+  @apply absolute top-0 right-0 text-[#111] dark:text-white bg-white dark:bg-[#111] px-4 py-1;
+}
+.rehype-code-title + pre {
+  @apply mt-0 rounded-t-none;
+}
+.highlight-line {
+  @apply block px-4 -mx-4 bg-gray-100 border-l-4 border-blue-500 dark:bg-gray-800;
+}
+.prose a {
+  @apply underline text-gray-500 dark:text-gray-400;
+}
+.prose em {
+  @apply mr-1 text-gray-600 dark:text-gray-300;
+}
+.prose strong {
+  @apply my-5 font-mono text-lg font-bold text-slate-600 dark:text-gray-300;
+}
+.prose ol {
+  @apply list-disc list-inside text-gray-500 dark:text-gray-400;
+}
+.prose li {
+  @apply p-2;
+}
+.prose ul {
+  @apply list-disc list-inside text-gray-500 dark:text-gray-400;
+}
+.prose blockquote {
+  @apply p-3 my-3 font-mono rounded dark:bg-[#1e1e1e];
+}
+.prose blockquote p {
+  @apply text-gray-600;
+}
+.snip svg {
+  @apply w-full h-full;
+}

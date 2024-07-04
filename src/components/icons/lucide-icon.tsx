@@ -1,13 +1,20 @@
 import {
   ArrowLeft,
   ArrowRight,
+  Calendar,
   Check,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Cog,
+  Eye,
   Globe,
   LucideIcon,
   Menu,
   Quote,
+  Share2,
+  Timer,
+  User,
   X,
 } from "lucide-react";
 
@@ -22,4 +29,11 @@ export const Icons = {
   x: X,
   check: Check,
   chevronDown: ChevronDown,
+  ChevronRight: ChevronRight,
+  ChevronLeft: ChevronLeft,
+  user: User,
+  calendar: Calendar,
+  timer: Timer,
+  share: Share2,
+  eye: Eye,
 };

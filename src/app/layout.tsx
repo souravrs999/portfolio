@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "Next.js",
     "React",
     "Tailwind CSS",
+    "Design",
+    "Development",
+    "Developer",
     "Sourav R S",
     "Sourav",
     "Portfolio",
@@ -60,6 +63,9 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
+  alternates: {
+    canonical: siteConfig.url,
+  },
 };
 
 export const viewport: Viewport = {

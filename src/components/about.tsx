@@ -13,7 +13,7 @@ const About = () => {
             <Image fill src="/images/about-me-cover.jpg" alt="about me image" />
           </div>
         </div>
-        <p className="max-w-4xl text-base text-gray-500 dark:text-gray-400 text-justify">
+        <p className="max-w-4xl text-base text-gray-500 dark:text-gray-400 text-pretty">
           Hi there! I&apos;m a passionate Frontend Developer from
           Thiruvananthapuram, Kerala, India. I hold a Bachelor&apos;s degree in
           B.Voc Computer Science and have been honing my skills in the tech

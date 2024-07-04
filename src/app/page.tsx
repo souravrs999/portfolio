@@ -5,6 +5,7 @@ import HeroSection from "@/components/hero";
 import Skills from "@/components/skills";
 import Testimonials from "@/components/testimonials";
 import Works from "@/components/works";
+import Blogs from "./blogs/page";
 
 const Home = () => {
   return (

@@ -1,0 +1,246 @@
+---
+title: 'Adding TailwindCSS to your NextJS application'
+publishedAt: '2021-09-09'
+summary: 'A detailed walkthrough for setting up and using TailwindCSS a utility-first CSS framework in your NextJS application.'
+image: '/images/blog/adding-tailwind-to-nextjs-application-800x514.jpg'
+author: 'Sourav Raveendran'
+tags:
+  - Nextjs
+  - Tailwind
+  - Styling
+  - CSS
+designation: 'Backend Dev'
+---
+
+## What is TailwindCSS ?
+
+Tailwind CSS is a highly customizable, low-level CSS framework that allows you to custom-build designs eliminating opinionated component styles that you would anyway want to override.
+
+## Why TailwindCSS ?
+
+There’s a lot that goes on in web development. It can sometimes, thus, become an overly complicated task. Mapping the impact of styling might become tedious and time-consuming hampering the progress of the application/website.
+
+Implementing Tailwind CSS will eliminate all the above-mentioned issues. Tailwind CSS creates small utilities with a defined set of options enabling easy integration of existing classes directly into the HTML code. Custom styling can be provided to the components with the help of this framework.
+
+## Installation
+
+Let's start our project with installing TailwindCSS and it's dependencies
+
+<CodeBlock>
+```bash:Terminal
+# If you're using npm
+npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+
+# If your're using yarn
+yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest
+```
+</CodeBlock>
+
+Next we will generate _tailwind.config.js_ file and _postcss.config.js_ files which can be used to customize Tailwind even further, you can easily create this file by running
+
+<CodeBlock>
+```bash:Terminal
+npx tailwindcss init -p
+```
+</CodeBlock>
+
+This will create a minimal _tailwind.config.js_ file at the root of your project.
+
+<CodeBlock>
+```JavaScript:tailwind.config.js
+module.exports = {
+  purge: [],
+  darkMode: false,
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+</CodeBlock>
+
+It will also create a _postcss.config.js_ file that includes _tailwindcss_ and _autoprefixer_ already configured we won't be using any other plugins for this project so we will leave this file as is.
+
+## Purging unused CSS
+
+TailwindCSS comes with built-in support to purge the unused CSS and only use one's that we use in our project thus reducing our bundle size.
+
+In our _tailwind.config.js_ file add the locations of our files so _Purge CSS_ can include these files too .
+
+<CodeBlock>
+```JavaScript:tailwind.config.js
+  module.exports = {
+   purge: [
+     './pages/**/*.{js,ts,jsx,tsx}',
+     './components/**/*.{js,ts,jsx,tsx}',
+     './layouts/**/*.{js,ts,jsx,tsx}'
+   ],
+    darkMode: false,
+    theme: {
+      extend: {},
+    },
+    variants: {
+      extend: {},
+    },
+    plugins: [],
+  }
+```
+</CodeBlock>
+
+All files within these directorie's with the extensions **.js**,**.ts**,**.jsx**,**.tsx** will be picked up by Purge CSS.
+
+## Adding Tailwind to globals.css
+
+Open the _./styles/globals.css_ file that NextJS generates for you by default and add these to it.
+
+<CodeBlock>
+```css:styles/globals.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+</CodeBlock>
+
+this will import tailwinds base, components and utilites for use to use on our project, and make sure you correctly import your _globals.css_ file in your _\_app.js_ file.
+
+<CodeBlock>
+```jsx:pages/_app.js
+import '../styles/globals.css';
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
+}
+
+export default MyApp;
+```
+</CodeBlock>
+
+## Dark Mode support
+
+Let's also try to add Dark Mode support to our NextJS application which is a good addition to have in our application since most people prefer to use Dark mode over Light mode.
+
+> To quickly switch between Dark Mode and Light Mode we will be using **next-themes** so let's install it quickly.
+
+<CodeBlock>
+```bash:Terminal
+# If you use npm
+npm install next-themes
+
+# If you use yarn
+yarn add next-themes
+```
+</CodeBlock>
+
+Now in our _tailwind.config.js_ file let's replace _darkMode_ value with _class_ instead of _false_.
+We will be using Tailwinds _dark_ variant that let's you style differently when dark mode is enabled.
+
+<CodeBlock>
+```JavaScript:tailwind.config.js
+  module.exports = {
+   purge: [
+     './pages/**/*.{js,ts,jsx,tsx}',
+     './components/**/*.{js,ts,jsx,tsx}',
+     './layouts/**/*.{js,ts,jsx,tsx}'
+   ],
+    darkMode: 'class',
+  }
+
+```
+</CodeBlock>
+
+Now in our _\_app.js_ file wrap the component within _next-themes_ ThemeProvider with _attribute_ as class.
+
+<CodeBlock>
+```jsx:pages/_app.js
+import '../styles/globals.css';
+
+import { ThemeProvider } from 'next-themes';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+
+export default MyApp;
+```
+</CodeBlock>
+
+with that done let's create a _ThemeToggler_ component, for that let's open a new file _ThemeToggler.jsx_ and add these to the file.
+
+<CodeBlock>
+```jsx:ThemeToggler.jsx
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+
+export default function ThemeToggler() {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
+
+  return (
+    <button
+      aria-label="Toggle Dark Mode"
+      type="button"
+      className="w-10 h-10 p-3 bg-gray-200 rounded dark:bg-dark-muted"
+      onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+    >
+      {mounted && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          stroke="currentColor"
+          className="w-4 h-4 text-gray-800 dark:text-gray-200"
+        >
+          {resolvedTheme === 'dark' ? (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          ) : (
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          )}
+        </svg>
+      )}
+    </button>
+  );
+}
+```
+</CodeBlock>
+
+Finally let's add the appropriate styling for the dark mode to your components, this can be done by adding _dark:_ prefix to your styling with that our components ready let's test it out.
+
+<BlogImg
+  src={`/images/screenshots/Screenshot_20210910_103122.png`}
+  width={800}
+  height={514}
+  alt="tailwind light mode card"
+/>
+
+_Card with Tailwind Light mode_
+
+<BlogImg
+  src={`/images/screenshots/Screenshot_20210910_103131.png`}
+  width={800}
+  height={514}
+  alt="tailwind dark mode card"
+/>
+
+_Card with Tailwind Dark mode_
+
+And that's it, we just added TailwindCSS to our NextJS application and also added Dark Mode support to it.
+If you would like to know more about customizing and configuring TailwindCSS you can read more at [Tailwind Docs](https://tailwindcss.com/docs)
