@@ -1,15 +1,25 @@
+"use client";
 import { IFrontMatter } from "@/types/posts";
 import { Icons } from "./icons/lucide-icon";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./ui/button";
 import SocialSharable from "./blog-social-shareable";
+import { useEffect } from "react";
 
 export default function BlogHero({
   frontMatter,
 }: {
   frontMatter: Partial<IFrontMatter>;
 }) {
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      fetch(`/api/views/${frontMatter.slug}`, { method: "POST" });
+    }, (frontMatter.readingTime?.minutes || 1) * 60 * 0.75 * 100);
+    return () => clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="grid grid-cols-1 2xl:grid-cols-2 mb-12 gap-12 items-center">
       <div className="flex flex-col gap-6">

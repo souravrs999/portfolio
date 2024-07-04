@@ -60,7 +60,7 @@ export async function getFileBySlug(slug: string, type: string) {
     tags: frontmatter.tags,
     slug: slug || null,
     readingTime: readingTime(source),
-    wordCount: source.split(/\s+/gu).length,
+    wordCount: source.split(/\s+/g).filter(Boolean).length,
   };
 
   return {

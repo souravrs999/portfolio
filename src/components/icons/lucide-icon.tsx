@@ -7,6 +7,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Cog,
+  Eye,
   Globe,
   LucideIcon,
   Menu,
@@ -34,4 +35,5 @@ export const Icons = {
   calendar: Calendar,
   timer: Timer,
   share: Share2,
+  eye: Eye,
 };

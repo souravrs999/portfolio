@@ -7,9 +7,9 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full flex">
+    <div className="w-full flex flex-col xl:flex-row">
       {children}
-      <div className="hidden xl:block w-[30rem] p-12 shrink-0">
+      <div className="w-full xl:w-[30rem] p-12 shrink-0">
         <BlogsSuggestions />
       </div>
     </div>

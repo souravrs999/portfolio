@@ -7,6 +7,7 @@ export interface IPost {
   image: string;
   author: string;
   designation: string;
+  views?: number;
   tags: string[];
   slug: string | null;
   readingTime: ReadTimeResults;

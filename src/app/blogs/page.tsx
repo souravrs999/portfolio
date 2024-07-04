@@ -13,9 +13,6 @@ async function getPosts() {
 
 const Blogs = async () => {
   const posts = await getPosts();
-  const views = fetch("/api/views", { method: "GET" }).then((res) => {
-    console.log(res.json());
-  });
   return (
     <Section id="blogs" watermark>
       <SectionHeading className="mt-0">blogs</SectionHeading>

@@ -3,15 +3,17 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
   try {
-    const viewCounts = await client
+    const blogs = await client
       .db()
       .collection("viewCount")
-      .find()
+      .find({ type: "blog" })
+      .sort({ views: -1 })
+      .limit(4)
       .toArray();
-    return NextResponse.json(viewCounts);
+    return NextResponse.json(blogs);
   } catch (err) {
     return NextResponse.json(
-      { error: err || "Internal Server error" },
+      { error: err || "Internal Server Error." },
       { status: 500 }
     );
   }
