@@ -3,8 +3,29 @@ import Section from "@/components/section";
 import SectionHeading from "@/components/section-heading";
 import Button from "@/components/ui/button";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
+import { siteConfig } from "@/util/site-config";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Blogs - Insights and Stories from My Portfolio",
+  description:
+    "Explore my latest articles on design, development, and creativity. Discover tips, trends, and personal experiences from my professional journey.",
+  openGraph: {
+    title: "Blogs - Insights and Stories from My Portfolio",
+    description:
+      "Explore my latest articles on design, development, and creativity. Discover tips, trends, and personal experiences from my professional journey.",
+  },
+  twitter: {
+    title: "Blogs - Insights and Stories from My Portfolio",
+    description:
+      "Explore my latest articles on design, development, and creativity. Discover tips, trends, and personal experiences from my professional journey.",
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/blogs`,
+  },
+};
 
 async function getPosts() {
   const posts = await getAllFilesFrontMatter("posts");

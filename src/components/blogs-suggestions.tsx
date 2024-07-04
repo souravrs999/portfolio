@@ -2,15 +2,16 @@ import { Icons } from "./icons/lucide-icon";
 import Link from "next/link";
 import Button from "./ui/button";
 import { IPost } from "@/types/posts";
+import { siteConfig } from "@/util/site-config";
 
 export default async function BlogsSuggestions() {
-  const popular = await fetch(
-    `${process.env.CANONICAL_URL}/api/blogs/popular`
-  ).then((res) => {
-    if (res.ok) {
-      return res.json();
+  const popular = await fetch(`${siteConfig.url}/api/blogs/popular`).then(
+    (res) => {
+      if (res.ok) {
+        return res.json();
+      }
     }
-  });
+  );
 
   return (
     <div className="flex flex-col gap-12 mt-6">
