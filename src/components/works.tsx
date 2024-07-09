@@ -10,11 +10,11 @@ const Works = () => {
       <SectionHeading>my recent works</SectionHeading>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
         <div className="bg-white dark:bg-[#111] p-6 border dark:border-[#1e1e1e] pl-12">
-          <p className="font-black text-2xl uppercase">Tody</p>
+          <p className="font-black text-2xl uppercase">Realtime chat</p>
           <ul className="mt-2 text-base text-gray-500 dark:text-gray-400 text-pretty list-disc">
             <li>
-              Worked on the chat section for Tody, a user facing care management
-              platform.
+              Created a realtime chat appliations leveraging NextJS, sockets
+              etc...
             </li>
             <li>supports p2p & group chats over websockets.</li>
             <li>

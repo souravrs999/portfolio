@@ -21,7 +21,7 @@ const Experience = () => {
           <div className="mt-4 text-base text-gray-500 dark:text-gray-400 max-w-6xl text-pretty">
             Developed and maintained high-performance chat applications,
             ensuring real-time communication and a seamless user experience for
-            Aspyre & Tody.
+            Equipo&apos;s projects.
             <br />
             Utilized Core CSS techniques to create responsive, visually
             appealing, and consistent user interfaces, enhancing overall user
